@@ -1,10 +1,12 @@
 import { create } from "zustand"
 import type { SessionInfo } from "./lib/commands"
 
-export type TransferStatus = "queued" | "uploading" | "complete" | "error"
+export type TransferStatus = "queued" | "uploading" | "downloading" | "complete" | "error"
+export type TransferKind = "upload" | "download"
 
 export interface Transfer {
   id: string
+  kind: TransferKind
   fileName: string
   remotePath: string
   localPath: string
