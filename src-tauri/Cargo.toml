@@ -1,0 +1,40 @@
+[package]
+name = "workin-desktop"
+version = "0.1.0"
+description = "workin desktop client"
+authors = ["parsherr"]
+edition = "2021"
+
+[lib]
+name = "workin_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["protocol-asset"] }
+tauri-plugin-opener = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-notification = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+reqwest = { version = "0.12", features = ["json", "stream", "multipart"] }
+keyring = { version = "3", features = ["apple-native", "windows-native", "linux-native"] }
+base64 = "0.22"
+anyhow = "1"
+chrono = { version = "0.4", features = ["serde"] }
+sha2 = "0.10"
+hex = "0.4"
+futures = "0.3"
+bytes = "1"
+log = "0.4"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+panic = "abort"
+strip = true

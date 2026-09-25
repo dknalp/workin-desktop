@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: oklch(0.99 0 0);
+    --foreground: oklch(0.14 0 0);
+    --card: oklch(0.97 0 0);
+    --border: oklch(0.90 0 0);
+    --muted: oklch(0.94 0 0);
+    --muted-foreground: oklch(0.50 0 0);
+    --accent: oklch(0.92 0.02 240);
+    --accent-foreground: oklch(0.14 0 0);
+  }
+  .dark {
+    --background: oklch(0.13 0 0);
+    --foreground: oklch(0.97 0 0);
+    --card: oklch(0.17 0 0);
+    --border: oklch(0.25 0 0);
+    --muted: oklch(0.22 0 0);
+    --muted-foreground: oklch(0.60 0 0);
+    --accent: oklch(0.22 0.02 240);
+    --accent-foreground: oklch(0.97 0 0);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: var(--background); color: var(--foreground); }
+}
